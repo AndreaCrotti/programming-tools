@@ -4,15 +4,15 @@
 # run the program only if found in the path
 
 if which epylint
-then epylint "$1" 2>/dev/null
+then epylint "$@" 2>/dev/null
 fi
-    
+
 if which pyflakes
-then pyflakes "$1"
+then pyflakes "$@"
 fi
 
 if which pep8
-then pep8 --ignore=E221,E701,E202 --repeat "$1"
+then pep8 --ignore=E221,E701,E202 --repeat "$@"
 fi
 
 true
