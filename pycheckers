@@ -11,8 +11,10 @@ if which pyflakes
 then pyflakes "$@"
 fi
 
+# ignoring codes
+PEP8IGNORE="E221,E701,E202,E501,E261,E128,E126"
 if which pep8
-then pep8 --ignore=E221,E701,E202 --repeat "$@"
+then pep8 --ignore=$PEP8IGNORE --repeat "$@"
 fi
 
 true
