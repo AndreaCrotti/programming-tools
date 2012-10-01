@@ -13,6 +13,8 @@ IGNORE = ",".join([
     "W0142",  # *args or **kwargs magic.
     "R0904",  # Too many public methods
     "R0201",  # Method could be a function
+    "C0111",  # Missing docstring
+    "W0142",  # * or ** magic
 ])
 
 CMD = "pylint --output-format parseable --include-ids y --reports n --disable-msg={} {}".format(IGNORE, sys.argv[1])
