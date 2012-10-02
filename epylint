@@ -7,17 +7,16 @@ from subprocess import Popen, PIPE
 
 IGNORE = ",".join([
     "C0103",  # Naming convention
+    "C0111",  # Missing docstring
     "I0011",  # Warning locally suppressed using disable-msg
     "I0012",  # Warning locally suppressed using disable-msg
-    "W0511",  # FIXME/TODO
-    "W0142",  # *args or **kwargs magic.
-    "R0904",  # Too many public methods
     "R0201",  # Method could be a function
-    "C0111",  # Missing docstring
-    "W0142",  # * or ** magic
+    "R0904",  # Too many public methods
+    "W0142",  # *args or **kwargs magic.
+    "W0511",  # FIXME/TODO
 ])
 
-CMD = "pylint --output-format parseable --include-ids y --reports n --disable-msg={} {}".format(IGNORE, sys.argv[1])
+CMD = "pylint --output-format parseable --include-ids y --reports n --disable-msg={} {}".format(IGNORE, ' '.join(sys.argv[1:]))
 
 
 def report_errors():

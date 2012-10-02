@@ -3,17 +3,17 @@
 
 # run the program only if found in the path
 
-if which epylint
+if which epylint > /dev/null
 then epylint "$@" 2>/dev/null
 fi
 
-if which pyflakes
+if which pyflakes > /dev/null
 then pyflakes "$@"
 fi
 
 # ignoring codes
 PEP8IGNORE="E221,E701,E202,E501,E261,E128,E126"
-if which pep8
+if which pep8 > /dev/null
 then pep8 --ignore=$PEP8IGNORE --repeat "$@"
 fi
 
